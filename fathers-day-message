@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Father's Day!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding-top: 50px;
+            color: #333;
+        }
+        #message {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-top: 30px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #254b8a;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💙 Happy Father's Day! 💙</h1>
+
+    <p>Click the button to reveal a special message!</p>
+
+    <button onclick="showMessage()">Reveal Message</button>
+
+    <div id="message"></div>
+
+    <script>
+        function showMessage() {
+            const message = "Thank you, Dad, for your love, wisdom, and strength.\nYou are truly the best! 👔☕🎁";
+            const messageDiv = document.getElementById("message");
+            messageDiv.innerHTML = "";
+            let i = 0;
+
+            // Simulate typing effect
+            function typeChar() {
+                if (i < message.length) {
+                    messageDiv.innerHTML += message[i] === '\n' ? "<br>" : message[i];
+                    i++;
+                    setTimeout(typeChar, 50);
+                }
+            }
+
+            typeChar();
+        }
+    </script>
+
+</body>
+</html>
